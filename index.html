@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+	<div id="app">
+
+		<div id="container">
+
+			<div id="header" :style="{backgroundColor:'steelblue', textAlign:'center', color:'white', padding:'20px'}">
+				<h1 :style="{fontWeight:'normal', lineHeight:'1.1', padding:'20px'}">{{titulo1}}</h1>
+				<span id="colorDisplay" :style="{fontSize:'200%'}">RGB</span>
+				<br>
+				<h1 :style="{fontWeight:'normal', lineHeight:'1.1', padding:'20px'}">GUESSING GAME</h1>
+			</div>
+
+			<div id="navigator" :style="{background: '#ffffff', height:'30px', textAlign:'center', margin:margin, 
+			marginTop:'-30px'}">
+				<button id="reset"> New colors</button>
+				<span :data="mensaje">{{mensaje}}</span>
+				<button id="easy">easy</button>
+				<button id="hard" class="selected">hard</button>
+			</div>
+
+			<div id="body" :style="{background:'#232323', fontFamily:fontFamily}">
+				<h1>aca van los cuadrados</h1>
+				<div class="square" :style="estiloCuadrados"></div>
+				<div class="square" :style="estiloCuadrados"></div>
+				<div class="square" :style="estiloCuadrados"></div>
+				<div class="square" :style="estiloCuadrados"></div>
+				<div class="square" :style="estiloCuadrados"></div>
+				<div class="square" :style="estiloCuadrados"></div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	<script>
+
+		new Vue ({
+
+			el: '#app',
+
+			data:{
+				colorDisplay:"red",
+				titulo1: 'THE GREAT',
+				mensaje:'',
+				margin: 0,
+				fontFamily: "Montserrat",
+				estiloCuadrados:{
+					width:'30%',
+					background: "blue",
+					paddingBottom:'30%',
+					float: 'left',
+					margin:'1.66%',
+					borderRadius: '10%',
+					transition:'background 0.8s',
+				}
+			}
+	
+		})
+
+	</script>
+
+</html>
